@@ -14,6 +14,7 @@ public class Certificate {
 
     private String id;
     private String pdfUrl;
+    private String svgUrl;
     private String jsonUrl;
     private Recipient recipient;
     private Map<String, Object> data;
@@ -29,6 +30,7 @@ public class Certificate {
     private Certificate(Builder builder) {
         this.id = builder.id;
         this.pdfUrl = builder.pdfUrl;
+        this.svgUrl = builder.svgUrl;
         this.jsonUrl = builder.jsonUrl;
         this.recipient = builder.recipient;
         this.data = builder.data;
@@ -63,6 +65,13 @@ public class Certificate {
     public void setPdfUrl(String pdfUrl) {
         this.pdfUrl = pdfUrl;
     }
+    public String getSvgUrl() {
+        return svgUrl;
+    }
+
+    public void setSvgUrl(String svgUrl) {
+        this.svgUrl = svgUrl;
+    }
 
     public String getJsonUrl() {
         return jsonUrl;
@@ -95,6 +104,7 @@ public class Certificate {
         return "Certificate{" +
                 "id='" + id + '\'' +
                 ", pdfUrl='" + pdfUrl + '\'' +
+                ", svgUrl='" + svgUrl + '\'' +
                 ", jsonUrl='" + jsonUrl + '\'' +
                 ", recipient=" + recipient +
                 ", data=" + data +
@@ -112,6 +122,7 @@ public class Certificate {
 
         private String id;
         private String pdfUrl;
+        private String svgUrl;
         private String jsonUrl;
         private Recipient recipient;
         private Map<String, Object> data;
@@ -150,6 +161,12 @@ public class Certificate {
 
         public Builder setPdfUrl(String pdfUrl) {
             this.pdfUrl = pdfUrl;
+            return this;
+
+        }
+
+        public Builder setSvgUrl(String svgUrl) {
+            this.svgUrl = svgUrl;
             return this;
 
         }

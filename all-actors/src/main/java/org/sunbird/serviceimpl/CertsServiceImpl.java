@@ -123,6 +123,9 @@ public class CertsServiceImpl implements ICertService {
         if(version.equalsIgnoreCase(JsonKeys.VERSION_1)) {
             certificate.setPdfUrl((String)certReqAddMap.get(JsonKeys.PDF_URL));
         }
+        if(version.equalsIgnoreCase(JsonKeys.VERSION_2)) {
+            certificate.setSvgUrl((String)certReqAddMap.get(JsonKeys.SVG_URL));
+        }
         Map<String,Object>recordMap= requestMapper.convertValue(certificate,Map.class);
         return CertificateUtil.insertRecord(recordMap, certBackgroundActorRef);
     }
